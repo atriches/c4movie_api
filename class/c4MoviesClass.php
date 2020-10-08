@@ -8,6 +8,7 @@ class c4MoviesClass
     protected $sortBy = 'popularity.desc';
     protected $include_video = false;
     public $themovieMoviesDbUrl = 'https://api.themoviedb.org/3/movie/';
+    public $themovieSearchDbUrl = 'https://api.themoviedb.org/3/search/movie';
     public $themovieGenresDbUrl = 'https://api.themoviedb.org/3/genre/movie/list';
     protected $tipo;
     protected $categoria;
@@ -16,7 +17,7 @@ class c4MoviesClass
     {
     }
 
-    public function requisicao($pagina)
+    public function requisicao($pagina, $busca = null)
     {
         if ($this->tipo == 'movie') {
             if (intval($pagina) <= 0) {
@@ -32,8 +33,11 @@ class c4MoviesClass
                 "&page=" . $pagina);
         } else if ($this->tipo == 'genre') {
             $curl = curl_init($this->themovieGenresDbUrl . "?api_key=" . $this->apikey);
+        } else if ($this->tipo == 'search') {
+          
+            $curl = curl_init($this->themovieSearchDbUrl . "?api_key=" . $this->apikey . "&query=" . $busca);
         } else {
-            throw new Exception('Tipo de requisição inválida(tipos válidos: movie , genre)');
+            throw new Exception('Tipo de requisição inválida(tipos válidos: movie , genre,search)');
         }
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -44,6 +48,4 @@ class c4MoviesClass
         curl_close($curl);
         return $response;
     }
-
-  
 }

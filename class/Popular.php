@@ -5,7 +5,7 @@ class Popular extends c4MoviesClass
     public  function __construct()
     {
       
-        $this->categoria =  'popular';
+        $this->categoria =  'top_rated';
         $this->tipo = 'movie';
     }
     public  function listar($pagina)
