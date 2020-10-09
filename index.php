@@ -2,7 +2,6 @@
 require_once 'class/Upcoming.php';
 require_once 'class/Popular.php';
 require_once 'class/Genero.php';
-require_once 'class/Filme.php';
 require_once 'class/Pesquisa.php';
 require_once 'class/Relacionado.php';
 require_once 'controller/c4MoviesController.php';

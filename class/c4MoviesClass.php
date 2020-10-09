@@ -1,5 +1,5 @@
 <?php
-class c4MoviesClass
+class c4MoviesClass 
 {
 
     protected $apikey = '751eeee6b01c2ff7f9b940012e11e751';
@@ -74,41 +74,6 @@ class c4MoviesClass
                 throw new Exception('Tipo de requisição inválida.(tipos válidos: upcoming, popular , genero, pesquisa e relacionado)');
         }
 
-
-
-/*
-        if ($this->tipo == 'movie') {
-
-            if (intval($pagina) <= 0) {
-                throw new Exception('Pagina não pode ser menor que 1');
-            }
-
-            $curl = curl_init($this->themovieMoviesDbUrl .
-                $this->categoria .
-                "?api_key=" . $this->apikey .
-                "&language=" . $this->language .
-                "&sort_by=" . $this->sortBy .
-                "&include_adult=" . $this->include_adult .
-                "&include_video=" . $this->include_video .
-                "&page=" . $pagina);
-        } else if ($this->tipo == 'genre') {
-            $curl = curl_init($this->themovieGenresDbUrl .
-                "?api_key=" . $this->apikey);
-        } else if ($this->tipo == 'search') {
-            $curl = curl_init($this->themovieSearchDbUrl .
-                "?api_key=" . $this->apikey .
-                "&query=" . $busca);
-        } else if ($this->tipo == 'similar') {
-            $curl = curl_init($this->themovieMoviesDbUrl .
-                $idFilme .
-                "/" . $this->tipo .
-                "?api_key=" . $this->apikey .
-                "&language=" . $this->language .
-                "&page=" . $pagina);
-        } else {
-            throw new Exception('Tipo de requisição inválida.(tipos válidos: upcoming, popular , genero, pesquisa e relacionado)');
-        }
-*/
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json;charset=utf-8'

@@ -1,7 +1,8 @@
 <?php
 
 require_once 'c4MoviesClass.php';
-class Genero extends c4MoviesClass
+require_once __DIR__."./../interface/theMovieDb.php";
+class Genero extends c4MoviesClass implements theMovieDb
 {
     public  function __construct()
     {
@@ -12,7 +13,7 @@ class Genero extends c4MoviesClass
     public  function listar($id)
     {
 
-        $dados = parent::requisicao($id);
+        $dados = parent::requisicao(intval($id));
         $result = null;
         if (isset($id) and $id != "" and intval($id) > 0) {
 

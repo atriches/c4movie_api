@@ -23,7 +23,8 @@ It's expected that user will be able to:
 
 - The same endpoint should return all movie related videos with a single request.
     http://localhost/c4MovieApi/relacionado/listar/<nome do filme>
-    
+ 
+
 - Endpoint to get a list of genres.
 - The same endpoint should return a single genre by id.
  http://localhost/c4MovieApi/genero/listar/<id optional>
