@@ -16,7 +16,6 @@ class Genero extends c4MoviesClass
         $result = null;
         if (isset($id) and $id != "" and intval($id) > 0) {
 
-            //throw new Exception('Paginação Inválida.');
             foreach ($dados->genres as $key => $genre) {
 
                 if (intval($genre->id) == intval($id)) {

@@ -8,13 +8,16 @@ class Pesquisa extends c4MoviesClass
         $this->categoria =  null;
         $this->tipo = 'search';
     }
+    
     public  function listar($busca)
     {
         if(trim($busca =="")){
             throw new Exception('Informe o nome do filme para busca');
         }
-        $stringPesquisa = str_replace(" ","+",$busca);
+        
+        $stringPesquisa = str_replace("+"," ",$busca);
+        $stringPesquisa = str_replace(" ","+",$stringPesquisa);
      
-        return  parent::requisicao(null,$stringPesquisa);
+        return  parent::requisicao(0,$stringPesquisa);
     }
 }
