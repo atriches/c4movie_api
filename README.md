@@ -4,15 +4,15 @@
 Essa api foi desenvolvida coom PHP 7.4 utiliando o Apache 2.4
 Segue a lista de Endpoints : 
 
-http://localhost/c4MovieApi/upcoming/listar/<pagina>
+http://localhost/c4MovieApi/upcoming/listar/{pagina (int)}
 
-http://localhost/c4MovieApi/popular/listar/<pagina>
+http://localhost/c4MovieApi/popular/listar/{pagina (int)}
 
-http://localhost/c4MovieApi/pesquisa/listar/<nome do filme>
+http://localhost/c4MovieApi/pesquisa/listar/{nome do filme (string)}
 
-http://localhost/c4MovieApi/relacionado/listar/<nome do filme>
+http://localhost/c4MovieApi/relacionado/listar/{nome do filme (string)}
 
-http://localhost/c4MovieApi/genero/listar/<id -optional>
+http://localhost/c4MovieApi/genero/listar/{id (int) -optional}
 
 
 

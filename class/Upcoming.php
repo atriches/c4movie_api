@@ -11,7 +11,7 @@ class Upcoming extends c4MoviesClass implements theMovieDb
     }
     public  function listar($pagina)
     {
-        return  parent::requisicao($pagina);
+        return  parent::requisicao((int)$pagina);
     }
 
 }
